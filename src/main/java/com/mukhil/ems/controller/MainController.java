@@ -33,7 +33,7 @@ public class MainController {
 		return "home";
 	}
 	
-	@CrossOrigin(origins="http://localhost:4200")
+	@CrossOrigin(origins="https://angular-ems-crud.herokuapp.com")
 	@GetMapping("/getEmployee/{id}")
 	public ResponseEntity<Employee> getEmployeeById(@PathVariable("id") int id) {
 		Employee employee=repo.findById(id)
@@ -43,13 +43,13 @@ public class MainController {
 	
 	
 	
-	@CrossOrigin(origins="http://localhost:4200")
+	@CrossOrigin(origins="https://angular-ems-crud.herokuapp.com")
 	@GetMapping("/getEmployees")
 	public List<Employee> getEmployees(){
 		return repo.findAll();
 	}
 	
-	@CrossOrigin(origins="http://localhost:4200")
+	@CrossOrigin(origins="https://angular-ems-crud.herokuapp.com")
 	@PostMapping("/addEmployee")
 	public String addEmployee(@RequestBody Employee employee) {
 		repo.save(employee);
@@ -57,7 +57,7 @@ public class MainController {
 		
 	}
 	
-	@CrossOrigin(origins="http://localhost:4200")
+	@CrossOrigin(origins="https://angular-ems-crud.herokuapp.com")
 	@PutMapping("/updateEmployee/{id}")
 	public ResponseEntity<Employee> updateEmployee(@PathVariable("id") int id,@RequestBody Employee employeeDetails) {
 		
@@ -71,7 +71,7 @@ public class MainController {
 		return ResponseEntity.ok(updatedEmployee);
 	}
 	
-	@CrossOrigin(origins="http://localhost:4200")
+	@CrossOrigin(origins="https://angular-ems-crud.herokuapp.com")
 	@DeleteMapping("/deleteEmployee/{id}")
 	public ResponseEntity<Map<String,Boolean>> deleteEmployee(@PathVariable("id") int id) {
 		
